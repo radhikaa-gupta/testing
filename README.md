@@ -1,6 +1,8 @@
-# Intelligent Document Analysis Tool
+# Intelligent Document Analysis Tool for Adobe Hackathon 2025
+_Transforming static documents into context-aware knowledge companions_
 
-This repository contains two offline-first document processing pipelines developed for Adobe's Document AI Hackathon:
+Project Overview
+This repository contains two robust, offline-first document processing pipelines developed for Adobe's Document AI Hackathon. Our solutions efficiently extract structural metadata and generate persona-specific insights from PDF collections without requiring internet connectivity.
 
 * **Challenge 1A**: Title and outline extraction from unstructured PDFs.
 * **Challenge 1B**: Persona-specific document summarization using contextual ranking.
@@ -68,25 +70,54 @@ For full documentation and methodology, refer to:
 
 ---
 
-## Setup and Usage
+## Technical Specifications
+
+| Component              | Technology Stack             |
+|------------------------|------------------------------|
+| PDF Processing         | PyMuPDF, PDFMiner            |
+| NLP Processing         | NLTK, spaCy, SentencePiece   |
+| Relevance Engine       | Custom TF-IDF, Cosine Similarity |
+| Summarization          | Extractive + Positional Heuristics |
+| Containerization       | Docker (AMD64 compatible)    |
+| Language               | Python 3.10+                 |
+
+## Getting Started
 
 ### Prerequisites
+- Docker (version 20.10+)
+- AMD64 compatible system (tested on Ubuntu 22.04/WSL2)
+- 8GB RAM recommended
 
-* Docker (version 20.10 or higher)
-* Linux or WSL2 environment for compatibility with `--platform=linux/amd64`
-* Python scripts are compatible with Python 3.10+
+### Installation & Execution
 
-### Building and Running
-
-From within either `Challenge_1a` or `Challenge_1b`, run:
-
+**Challenge 1A**:
 ```bash
-# Build the Docker image
-docker build -t doc-understand .
+cd Challenge_1a
+docker build --platform linux/amd64 -t doc-structure .
+docker run --rm -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output doc-structure
+```
 
-# Run the container with mounted data
-docker run --rm -v $(pwd):/app doc-understand
+**Challenge 1B**:
+```bash
+cd Challenge_1b
+docker build --platform linux/amd64 -t doc-intelligence .
+docker run --rm -v $(pwd)/collections:/app/collections doc-intelligence
 ```
 
 Each challenge has a separate entry point script that automatically processes available files and prints or stores the results.
 
+## Why Our Solution Stands Out
+
+1. **Contextual Intelligence**  
+   Understands professional roles and specific tasks
+
+2. **Explainable Outputs**  
+   Transparent scoring mechanisms for auditability
+
+3. **Domain Adaptability**  
+   - Academic: Recognizes "Methodology"/"Results" sections
+   - Financial: Extracts metric-trend-justification triplets
+   - Educational: Links textbook concepts to learning objectives
+
+4. **Resource Optimization**  
+   Smaller memory footprint than comparable solutions
