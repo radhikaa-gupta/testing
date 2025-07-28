@@ -55,7 +55,9 @@ Within each relevant section, a concise, extractive summary is generated using a
 * **Structural Features**: Emphasizes bullet points, lists, numerals, and tabular formats.
 * **Domain Adaptation**: Uses different weighting schemes for academic, financial, or educational content to tailor the summary appropriately.
 This method allows for fast yet informative summarization without relying on large language models or internet access.
-<img width="3840" height="806" alt="Untitled diagram _ Mermaid Chart-2025-07-28-144714" src="https://github.com/user-attachments/assets/e36b4ef8-fdcb-4944-9f06-0ecc2745ecdc" />
+<img width="3840" height="806" alt="Untitled diagram _ Mermaid Chart-2025-07-28-151821" src="https://github.com/user-attachments/assets/67a08577-947c-4666-8ee6-74c82e399d9d" />
+
+
 
 
 ## Generalization and Persona Test Cases
