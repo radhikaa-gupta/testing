@@ -1,7 +1,4 @@
-# approach\_explanation.md
-
 ## Overview
-
 This system is designed as an **offline, intelligent document analysis engine** that identifies, ranks, and summarizes the most relevant sections from a collection of PDF documents. It operates based on a specified **persona** and their **job-to-be-done**, ensuring that the output is both contextually useful and role specific. The solution is optimized for environments with **no internet access**, is efficient on **CPU only setups**, and supports **diverse domains**, including academia, business, and education. The complete pipeline runs within 30 seconds for 3–5 documents and uses less than 1 GB of memory.
 
 ## Key Design Objectives
